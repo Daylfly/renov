@@ -1,0 +1,40 @@
+.plan {
+  &:is(&--section) {
+    padding: rem(32);
+    .plan {
+      &__container {
+        color: var(--secondary-foreground);
+        background: var(--secondary);
+        border-radius: var(--radius);
+        padding: rem(92) rem(128);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &-title {
+          max-width: rem(640);
+        }
+        &-desc {
+          max-width: rem(515);
+          margin-block: rem(14) rem(60);
+        }
+      }
+      &__body {
+        &-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(rem(0), rem(548)));
+          gap: rem(14);
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

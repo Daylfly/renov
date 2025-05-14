@@ -1,0 +1,60 @@
+$global_gap: 24px;
+
+@mixin square($size) {
+  width: $size;
+  min-width: $size;
+  height: $size;
+}
+
+@mixin d-flex($align-items: center, $justify-content: start, $gap: $global_gap) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin d-grid($column, $gap: $global_gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $gap;
+  @if($column >= 6) {
+    @include tablet {
+      grid-template-columns: repeat(4,1fr);
+    }
+  } @else if(4 <= $column < 6) {
+    @include tablet {
+      grid-template-columns: repeat(3,1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(2,1fr);
+    }
+  } @else {
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}

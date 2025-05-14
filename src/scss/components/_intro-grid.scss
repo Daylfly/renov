@@ -1,0 +1,64 @@
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-flow: dense;
+  grid-template-areas: "a a b"
+                        "a a c"
+                        "a a c";
+  gap: rem(20);
+  @include mobile {
+    grid-template-areas: "a a a"
+                        "b c c";
+  }
+  @include mobile-s {
+    grid-template-areas: "a a a"
+                        " b b b"
+                        "c c c";
+  }
+  &__preview {
+    @include mobile {
+      height: rem(240);
+    }
+
+    grid-area: a;
+    width: 100%;
+    border-radius: var(--radius);
+    &-img {
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,.1);
+      border-radius: var(--radius);
+    }
+  }
+  &__stat {
+    grid-area: b;
+    padding: rem(24);
+    background: linear-gradient(180deg,rgba(255, 230, 93, 1) 0%, rgba(245, 170, 33, 1) 100%);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(18);
+    &-header {
+      @include d-flex(end,space-between);
+    }
+    &-count {
+      font-size: fluid(64,42);
+      font-weight: 700;
+      color: var(--primary-foreground);
+    }
+    &-link {
+      @include square(#{rem(48)});
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: 50%;
+      @include d-flex(center,center);
+      font-size: rem(18);
+    }
+    &-text {
+      font-size: rem(14);
+    }
+  }
+  &__search {
+    grid-area: c;
+  }
+}

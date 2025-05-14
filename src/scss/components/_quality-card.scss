@@ -1,0 +1,27 @@
+.quality-card {
+  max-width: rem(630);
+  color: var(--foreground);
+  background-color: var(--background);
+  border-radius: var(--radius);
+  border: rem(1) solid var(--border);
+  transition: color 0.2s;
+  &:is(:hover,:active) {
+    color: var(--primary-foreground);
+  }
+  &__body {
+    padding: rem(24);
+    display: flex;
+    flex-direction: column;
+    &-icon {
+      @include square(#{rem(64)});
+      background-color: red;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  &-title {
+    margin-block: rem(48) rem(12);
+  }
+
+}

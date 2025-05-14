@@ -1,0 +1,28 @@
+.container {
+  max-width: var(--container-width);
+  padding-inline: var(--container-offset);
+  margin-inline: auto;
+}
+
+.h1 {
+  font-size: fluid(64,32);
+  color: currentColor;
+  font-weight: 600;
+}
+.h2 {
+  font-size: fluid(48,32);
+  color: currentColor;
+  font-weight: 600;
+}
+
+.h3 {
+  font-size: fluid(24,18);
+  color: currentColor;
+  font-weight: 500;
+}
+
+.span {
+  &:is(&--primary) {
+    color: var(--primary);
+  }
+}

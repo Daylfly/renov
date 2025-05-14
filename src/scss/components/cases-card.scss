@@ -1,0 +1,46 @@
+.case-card {
+  width: 100%;
+  &__body {
+    width: 100%;
+    display: grid;
+    row-gap: rem(14);
+  }
+  &__preview {
+    width: 100%;
+    height: rem(530);
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: rgba(0,0,0,.1);
+      border-radius: var(--radius);
+    }
+  }
+  &__alt {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:
+                      "name name price"
+                      "descr descr price";
+    column-gap: rem(14);
+    row-gap: rem(8);
+    &-name {
+      grid-area: name;
+      font-size: rem(18);
+      color: var(--secondary);
+    }
+    &-description {
+      grid-area: descr;
+      font-size: rem(14);
+      color: var(--secondary);
+    }
+    &-price {
+      grid-area: price;
+      align-self: center;
+      font-size: fluid(32,24);
+      color: var(--secondary);
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+}

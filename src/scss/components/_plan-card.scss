@@ -1,0 +1,73 @@
+.plan-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  padding: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    max-width: rem(500);
+    &-icon {
+      @include square(rem(48));
+    }
+    &-title {
+    }
+    &-price {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: fluid(48,32);
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    &-button {
+      width: 100%;
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      justify-content: center;
+      padding-block: rem(16);
+    }
+    &-features {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+    }
+  }
+  &:is(&--premium) {
+    grid-column: span 2;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    flex-direction: row;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+    }
+    .plan-card {
+      &__body {
+        &-features {
+          border-left: solid 2px var(--secondary-foreground);
+        }
+        &-feature {
+          margin-bottom: rem(10);
+          display: flex;
+          align-items: center;
+          position: relative;
+          margin-left: rem(8);
+
+          i {
+            margin-right: rem(40);
+            position: absolute;
+            left: rem(-16);
+          }
+        }
+      }
+    }
+  }
+}

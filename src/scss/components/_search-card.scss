@@ -1,0 +1,28 @@
+.search-card {
+  display: grid;
+  row-gap: rem(52);
+  padding: rem(24);
+  color: var(--card-foreground);
+  background: var(--card);
+  border-radius: var(--radius);
+  &__header {
+    display: grid;
+    row-gap: rem(24);
+    &-title {
+      font-size: fluid(32,22);
+      font-weight: 500;
+    }
+    &-description {
+
+    }
+  }
+  &__form {
+    @include d-flex(center,space-between,#{rem(12)});
+    &-input {
+      flex: 1;
+    }
+    &-button {
+       flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.navbar {
+  @include mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    padding-block-start: rem(64);
+    background-color: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    //display: none;
+  }
+  &__menu {
+    @include d-flex(center, center, #{rem(32)});
+    @include mobile {
+      flex-direction: column;
+      //overflow-y: auto; дает скрол
+    }
+    &-link {
+      font-size: rem(14);
+      text-align: center;
+      color: var(--secondary-foreground);
+      @include mobile {
+        font-size: rem(22);
+      }
+    }
+  }
+}

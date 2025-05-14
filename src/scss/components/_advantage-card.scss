@@ -1,0 +1,37 @@
+.advantage-card {
+  width: 100%;
+  color: var(--primary-foreground);
+  transition: color 0.2s ease-in,background-color 0.2s ease-in;
+  background-color: transparent;
+  border-radius: var(--radius);
+  border: rem(1) solid var(--border);
+
+  &:is(:hover,:active) {
+    color: var(--secondary-foreground);
+    background: var(--secondary);
+  }
+  &__body {
+    padding: rem(24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &-icon {
+    @include square(#{rem(100)});
+    margin-inline: auto;
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    padding-block-start:rem(20);
+    padding-block-end: rem(12);
+    text-align: center;
+  }
+  &-description {
+    text-align: center;
+  }
+}

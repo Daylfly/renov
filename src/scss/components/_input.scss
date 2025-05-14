@@ -1,0 +1,9 @@
+.input {
+  padding: rem(14) rem(22);
+  background: var(--input);
+  border: rem(1) solid var(--border);
+  border-radius: rem(72);
+  &:focus-visible {
+    outline-color: var(--ring);
+  }
+}
